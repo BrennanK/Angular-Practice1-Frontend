@@ -1,0 +1,18 @@
+<div class="container">
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <form [formGroup]="radioForm">
+                <div class="form-group">
+                <input type="radio" name="typeSelector" id="winged-beast" value="Winged-Beast"  (change)="onClicked($event.target.value)">
+                <label for="winged-beast">Winged-Beast</label>
+
+                <input type="radio" name="typeSelector" id="magician" value="Magician"  (change)="onClicked($event.target.value)">
+                <label for="magician">Magician</label><br>
+
+                </div>
+                <h2>The value selected is {{radioValue}}</h2>
+            
+            </form>
+        </div>
+    </div>
+</div>

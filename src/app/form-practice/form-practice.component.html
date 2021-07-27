@@ -1,0 +1,39 @@
+<div class="container">
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <form [formGroup]="testForm">
+                <div class="form-group">
+                    <label>DropDown</label>
+                    <select class="form-control" formControlName="drop" [(ngModel)]="dropValue">
+                        <option value="red">Red</option>
+                        <option value="blue">Blue</option>
+                        <option value="green">Green</option>
+                    </select>
+                    <p *ngIf="testForm.controls.drop.errors" style="color:red">Required Field</p>
+                </div>
+
+                <div class="form-group">
+                    <label>Date</label>
+                    <input type="date" class="form-control" formControlName="date" [(ngModel)]="dateValue">
+                    <p *ngIf="testForm.controls.date.errors" style="color:red">Required Field</p>
+                </div>
+
+                <div class="form-group">
+                    <label>Max</label>
+                    <input type="number" class="form-control" formControlName="max" [(ngModel)]="maxValue">
+                    <p *ngIf="testForm.controls.max.errors" style="color:red">Value needs to be less than 200 but more than 7</p>
+                </div>
+
+                <div class="form-group">
+                    <label>Min</label>
+                    <input type="number" class="form-control" formControlName="min" [(ngModel)]="minValue">
+                    <p *ngIf="testForm.controls.min.errors" style="color:red">Value needs to be greater than 4</p>
+                </div>
+
+            </form>
+
+            <p *ngIf="dateValue!=null">{{dateValue}}</p>
+
+        </div>
+    </div>
+</div>

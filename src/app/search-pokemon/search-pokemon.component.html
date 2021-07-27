@@ -1,0 +1,19 @@
+<div class="container">
+    <h2>Pokemon Type Panel</h2>
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <form [formGroup]="searchForm">
+                <label>Type of Pokemon</label>
+                <input type="text" class="form-control" formControlName="type" [(ngModel)]="element">
+                <p *ngIf="searchForm.controls.type.errors">Field Required</p>
+
+                <button type="submit" class="btn btn-primary" (click)="setType(element)">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <div *ngIf="pokemon!=null">
+        <h3>The pokemmon {{pokemon.name}} with a Star Ranking of {{pokemon.starRank}} is of type {{pokemon.type}}</h3>
+    </div>
+
+</div>

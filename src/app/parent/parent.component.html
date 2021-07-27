@@ -1,0 +1,12 @@
+<div class="container">
+    <div class="panel panel-default">
+        <div class="panel-head" style="background-color: green; color:white">
+            My Thoughts
+        </div>
+        <div class="panel-body">
+            <input type="text" #val (change)="thought=val.value">
+            <app-child [stringValue]="thought" (EventToss)="messDisplay($event)"></app-child>
+            <p>This is the child to parent message: {{mess}}</p>
+        </div>
+    </div>
+</div>
